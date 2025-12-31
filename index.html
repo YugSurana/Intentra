@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intentra — AI that understands what you meant</title>
+  <href="icon.png" rel="icon" type="image/png" />
+
+  <meta name="description"
+    content="Intentra extracts real intent from words and upgrades any AI’s output automatically." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #0b0f1a, #05070c);
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      padding: 24px 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: rgba(5,7,12,0.85);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin-left: 32px;
+      font-weight: 500;
+      color: #cbd5f5;
+    }
+
+    .hero {
+      padding: 120px 64px;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #c7d2fe;
+      margin-bottom: 40px;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border-radius: 999px;
+      font-weight: 600;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 96px 64px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    section p {
+      color: #cbd5f5;
+      max-width: 700px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .card {
+      background: #0f172a;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    textarea {
+      width: 100%;
+      padding: 16px;
+      border-radius: 12px;
+      border: none;
+      font-size: 16px;
+      resize: vertical;
+      background: #020617;
+      color: #e5e7eb;
+    }
+
+    textarea::placeholder {
+      color: #94a3b8;
+    }
+
+    footer {
+      padding: 48px 64px;
+      text-align: center;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
+    }
+
+    @media (max-width: 768px) {
+      header { padding: 24px; }
+      .hero { padding: 96px 24px; }
+      section { padding: 72px 24px; }
+      .hero h1 { font-size: 40px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Intentra</div>
+  <nav>
+    <a href="#how">How it works</a>
+    <a href="#features">Features</a>
+    <a href="#demo">Demo</a>
+  </nav>
+</header>
+
+<main>
+
+  <div class="hero">
+    <h1>AI that understands what you meant</h1>
+    <p>Intentra extracts real intent from words and upgrades any AI’s output — automatically.</p>
+    <a href="#demo" class="cta">Try Live Demo</a>
+  </div>
+
+  <!-- DEMO -->
+  <section id="demo">
+    <h2>Live Intent Extraction</h2>
+    <p>Type your raw thought. Intentra detects intent, optimizes the prompt, and generates a better AI response.</p>
+
+    <div class="card" style="margin-top:32px">
+      <textarea id="userInput" rows="4" placeholder="Type what you’re thinking…"></textarea>
+      <button class="cta" style="margin-top:20px" onclick="runIntentra()">
+        Extract Intent & Generate
+      </button>
+    </div>
+
+    <div id="output" style="margin-top:48px; display:none">
+      <div class="card">
+        <h3>Detected Intent</h3>
+        <p id="intentText"></p>
+      </div>
+
+      <div class="card" style="margin-top:24px">
+        <h3>Optimized Prompt</h3>
+        <p id="promptText"></p>
+      </div>
+
+      <div class="card" style="margin-top:24px">
+        <h3>AI Response</h3>
+        <p id="finalText"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section id="how">
+    <h2>How Intentra Works</h2>
+    <p>Intentra sits between humans and AI, translating raw thoughts into precise prompts.</p>
+
+    <div class="grid">
+      <div class="card"><h3>Capture Thought</h3><p>Write naturally — no prompt engineering needed.</p></div>
+      <div class="card"><h3>Extract Intent</h3><p>Detects real goals, missing context, and ambiguity.</p></div>
+      <div class="card"><h3>Optimize Prompt</h3><p>Converts thoughts into AI-ready structure.</p></div>
+      <div class="card"><h3>Upgrade Output</h3><p>Any AI produces clearer, better answers.</p></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <h2>Why Intentra</h2>
+
+    <div class="grid">
+      <div class="card"><h3>Intent Intelligence</h3><p>Understands meaning, not just words.</p></div>
+      <div class="card"><h3>Prompt Optimization</h3><p>Automatically improves clarity and depth.</p></div>
+      <div class="card"><h3>Multi-AI Ready</h3><p>Works with GPT, Claude, LLaMA, and more.</p></div>
+      <div class="card"><h3>Voice + Text Ready</h3><p>Designed for spoken and typed input.</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Intentra — Prompt Intelligence Engine</p>
+</footer>
+
+<script>
+  async function runIntentra() {
+    const input = document.getElementById("userInput").value.trim();
+    if (!input) return;
+
+    document.getElementById("output").style.display = "block";
+    document.getElementById("intentText").innerText = "Analyzing intent…";
+    document.getElementById("promptText").innerText = "Optimizing prompt…";
+    document.getElementById("finalText").innerText = "Generating response…";
+
+    try {
+      const res = await fetch("http://127.0.0.1:8000/api/intentra", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ input })
+      });
+
+      const data = await res.json();
+
+      document.getElementById("intentText").innerText = data.intent;
+      document.getElementById("promptText").innerText = data.prompt;
+      document.getElementById("finalText").innerText = data.answer;
+
+    } catch (err) {
+      document.getElementById("intentText").innerText = "Backend not connected.";
+      document.getElementById("promptText").innerText = "-";
+      document.getElementById("finalText").innerText = "-";
+    }
+  }
+</script>
+
+</body>
+</html>
